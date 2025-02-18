@@ -1,6 +1,6 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: blue;
+    background-color: rgb(68, 144, 167);
     /* usa modelo FlexBox, conceito de caixa para posicionamento */
     display: flex;
     align-items: center; /* centralizado verticalmente */
@@ -23,7 +23,7 @@ button{
     cursor: pointer; /* ponteiro do mouse */
 }    
 button:hover {
-    background-color: rgb(165, 42, 48);
+    background-color: rgb(10, 3, 3);
 }
 
 .image{
@@ -31,4 +31,5 @@ button:hover {
     width: 100px; /*largura imagem */
     height: 100px; /* altura da imagem */
     margin-bottom: 10px; /* espacamento externo abaixo */
+   
 }
