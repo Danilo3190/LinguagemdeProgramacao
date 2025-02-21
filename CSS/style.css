@@ -23,6 +23,7 @@ button{
     cursor: pointer; /* ponteiro do mouse */
 }    
 button:hover {
+    
     background-color: rgb(10, 3, 3);
 }
 
@@ -31,8 +32,11 @@ button:hover {
     width: 100px; /*largura imagem */
     height: 100px; /* altura da imagem */
     margin-bottom: 10px; /* espacamento externo abaixo */
+     object-fit: cover; /* Mantém a proporção da imagem ao preencher */
+    }
+    
    
-}
+
 .sidebar {
     width: 200px;
     height: 100vh;
