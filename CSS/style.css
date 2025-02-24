@@ -35,8 +35,6 @@ button:hover {
      object-fit: cover; /* Mantém a proporção da imagem ao preencher */
     }
     
-   
-
 .sidebar {
     width: 200px;
     height: 100vh;
@@ -46,7 +44,36 @@ button:hover {
     position: fixed;
     left: 0;    
     top: 0;
+}
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+.sidebar ul li {
+    /*20px acima e abaixo e 0px a direita e esquerda */
+    margin: 20px 0;
+
+
+}
+.sidebar ul li a{
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+.conteiner {
+    /*capacidade de um elemneto Crescer*/
+    flex-grow: 1;
+    padding: 20;
+    margin-left: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 
 
 
 }
+
+
+
+
