@@ -30,7 +30,7 @@ function exe3(){
     let nro1 =Number( document.getElementById("nro1").value)
     let nro2 =Number( document.getElementById("nro2").value)
     let resultado = nro1 / nro2 ;
-    document.getElementById("divisão").innerText = "O Resultado é : " /divsao;
+    document.getElementById("Divisao").innerText = "O Resultado é : " + resultado ;
 }
 function exe4(){
     //Solicite as notas ao usuario
