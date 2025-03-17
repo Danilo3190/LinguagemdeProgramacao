@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(68, 144, 167);
+    /* usa modelo FlexBox, conceito de caixa para posicionamento */
+    display: flex;
+    align-items: center; /* centralizado verticalmente */
+    justify-content: center; /* centralizado horizontalmente */
+    height: 100vh; /* define a altura da tela 100% */
+}
+.card {
+    background-color: rgb(243, 250, 247);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0,1);
+    text-align: center;
+}
+button{
+    background: #599c9c;
+    color: rgba(38, 15, 170, 0.932);
+    border: none;
+    padding: 10px 15px; /* 10px e superior e 15 e esquerda */
+    border-radius: 5px; /* borda */
+    cursor: pointer; /* ponteiro do mouse */
+}    
+button:hover {
+    
+    background-color: rgb(10, 3, 3);
+}
+
+.image{
+    border-radius: 50%; /* campos arredondados de 50% */
+    width: 100px; /*largura imagem */
+    height: 100px; /* altura da imagem */
+    margin-bottom: 10px; /* espacamento externo abaixo */
+     object-fit: cover; /* Mantém a proporção da imagem ao preencher */
+    }
+    
+.sidebar {
+    width: 200px;
+    height: 100vh;
+    background: #333;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    left: 0;    
+    top: 0;
+}
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+.sidebar ul li {
+    /*20px acima e abaixo e 0px a direita e esquerda */
+    margin: 20px 0;
+
+
+}
+.sidebar ul li a{
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+.conteiner {
+    /*capacidade de um elemneto Crescer*/
+    flex-grow: 1;
+    padding: 20;
+    margin-left: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+
+
+}
+
+
+
+
