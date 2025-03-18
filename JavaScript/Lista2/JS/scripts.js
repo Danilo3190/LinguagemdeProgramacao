@@ -33,3 +33,30 @@ function exe2(){
 
 }
 }
+function exe3(){
+   let numero1 = Number(document.getElementById("numero1").Value);
+   let numero2 = Number(document.getElementById("numero2").Value);
+   if ((numero1 < numero2)){
+    alert('O menor numero é: numero1');
+    }
+     else {
+        alert('O menor numero é : numero2');
+    }
+   }
+
+
+function exe4(){
+    let numero1 = Number(document.getElementById("numero1").Value);
+    let numero2 = Number(document.getElementById("numero2").Value);
+    let numero3 = Number(document.getElementById("numero3").Value);
+    if ((numero1 < numero2) && (numero1 < numero3)){
+       ((numero2 < numero1)) && ((nuemro2 < numero3))
+       ((nuemero3 < numero1)) && ((numero3 < numero2))
+     alert('O menor numero é: numero1');
+     alert('O menor numero é: numero2');
+     }
+      else {
+         alert('O menor numero é : numero3');
+     }
+    }
+
