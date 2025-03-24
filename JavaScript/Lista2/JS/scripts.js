@@ -132,6 +132,50 @@ function exe8(){
         }  
 
 }
-function exe9(){
-    
+function exe9() {
+    // Obtém o valor do saldo médio do input com id "media"
+    let saldo = Number(document.getElementById("media").value);
+    let percentual;
+    let credito;
+
+    // Determinar o percentual de crédito com base no saldo médio
+    if (saldo >= 400) {
+        percentual = 30;
+    } else if (saldo > 300) { // Faixa entre 301 e 400
+        percentual = 25;
+    } else if (saldo > 200) { // Faixa entre 201 e 300
+        percentual = 20;
+    } else { // Igual ou abaixo de 200
+        percentual = 10;
+    }
+
+    // Calcula o crédito baseado somente no percentual do saldo médio
+    credito = saldo * (percentual / 100);
+
+    // Exibe o resultado no elemento com id "credito"
+    document.getElementById("credito").innerHTML = 
+        `O crédito disponível é: R$ ${credito.toFixed(2)}`;
 }
+function exe10() {
+    const custoFabrica = Number(document.getElementById("custoFabrica").value);
+    let percentualDistribuidor = 0;
+    let percentualImpostos = 0;
+  
+    if (custoFabrica <= 12000) {
+      percentualDistribuidor = 0.05; // 5%
+    } else if (custoFabrica <= 25000) {
+      percentualDistribuidor = 0.10; // 10%
+      percentualImpostos = 0.15; // 15%
+    } else {
+      percentualDistribuidor = 0.15; // 15%
+      percentualImpostos = 0.20; // 20%
+    }
+  
+    const valorDistribuidor = custoFabrica * percentualDistribuidor;
+    const valorImpostos = custoFabrica * percentualImpostos;
+    const precoConsumidor = custoFabrica + valorDistribuidor + valorImpostos;
+  
+    // Exibir o resultado na tela ou em um elemento HTML
+    document.getElementById("precoFinal").innerHTML = (`O preço ao consumidor é: R$ ${precoConsumidor.toFixed(2)}`);
+  }
+  
