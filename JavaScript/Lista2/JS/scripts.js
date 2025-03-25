@@ -135,47 +135,57 @@ function exe8(){
 function exe9() {
     // Obtém o valor do saldo médio do input com id "media"
     let saldo = Number(document.getElementById("media").value);
-    let percentual;
-    let credito;
+    let credito = 0
 
     // Determinar o percentual de crédito com base no saldo médio
-    if (saldo >= 400) {
-        percentual = 30;
-    } else if (saldo > 300) { // Faixa entre 301 e 400
-        percentual = 25;
-    } else if (saldo > 200) { // Faixa entre 201 e 300
-        percentual = 20;
-    } else { // Igual ou abaixo de 200
-        percentual = 10;
+    if (saldo > 400) {
+      credito = saldo * 30/100
+    } 
+    else if ((saldo > 300) && (saldo <= 400)){ 
+        credito = saldo * 25/100
+        
+    }
+    else if ((saldo > 200) && (saldo <=300)){ 
+        credito = saldo * 20/100
+    }
+        
+    else if ((saldo > 0) && (saldo <=200)){
+        credito = saldo * 10/100
+        
+    } 
+    else { //saldo negativo
+        document.getElementById("media").innerHTML = "Saldo não pode ser negativo"
+        return // saiu da função
+       
     }
 
-    // Calcula o crédito baseado somente no percentual do saldo médio
-    credito = saldo * (percentual / 100);
+ // Exibe o resultado no elemento com id "credito"
+        document.getElementById("credito").innerHTML = `saldo ${saldo} e credito ${credito}`;
 
-    // Exibe o resultado no elemento com id "credito"
-    document.getElementById("credito").innerHTML = 
-        `O crédito disponível é: R$ ${credito.toFixed(2)}`;
+     
 }
 function exe10() {
-    const custoFabrica = Number(document.getElementById("custoFabrica").value);
-    let percentualDistribuidor = 0;
-    let percentualImpostos = 0;
-  
-    if (custoFabrica <= 12000) {
-      percentualDistribuidor = 0.05; // 5%
-    } else if (custoFabrica <= 25000) {
-      percentualDistribuidor = 0.10; // 10%
-      percentualImpostos = 0.15; // 15%
-    } else {
-      percentualDistribuidor = 0.15; // 15%
-      percentualImpostos = 0.20; // 20%
-    }
-  
-    const valorDistribuidor = custoFabrica * percentualDistribuidor;
-    const valorImpostos = custoFabrica * percentualImpostos;
-    const precoConsumidor = custoFabrica + valorDistribuidor + valorImpostos;
-  
-    // Exibir o resultado na tela ou em um elemento HTML
-    document.getElementById("precoFinal").innerHTML = (`O preço ao consumidor é: R$ ${precoConsumidor.toFixed(2)}`);
-  }
-  
+   let custo = Number(document.getElementById("custo").value)
+   let distribuidor = 0
+   let imposto = 0
+
+   if (custo >= 0 && custo < 12000){
+        distribuidor = custo * 5 /100
+        imposto = 0
+   }
+   else if (custo >= 12000 && custo <= 25000){
+    distribuidor = custo * 10 /100
+    imposto = custo * 15 /100
+   }
+   else if (custo > 25000 ){
+    distribuidor = custo * 15 /100
+    imposto = custo * 20 /100
+   }
+   else {
+        document.getElementById("consumidor").innerHTML = "Custo negativo"
+        return // sai da funcao
+   }
+   let consumidor = custo + distribuidor
+   document.getElementById("consumidor").innerHTML = `Custo da fabrica ${custo}<br/>
+   distribuidor ${distribuidor} <br/> imposto ${imposto} <br/> Valor ao consumidor ${consumidor}`
+}
