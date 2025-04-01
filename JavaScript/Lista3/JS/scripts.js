@@ -25,15 +25,15 @@ function exe1(){
 }
 function exe2(){
     let preco = 5.0
-    let quantidade = 120
-    let despesa = 200
-    let lucro // guarda o lucro da preco do circo
-    while(preco >= 1.0){
-        lucro = (preco * quantidade) - despesa
-        saida = saida + (`${preco} - ${quantidade} - ${despesa} - ${lucro} `)
+    let qtde = 120
+    const despesa = 200
+    let lucro // guarda o lucro da peço de teatro
+    let saida = ""
+    while (preco >= 1.0){
+        lucro = (preco * qtde) - despesa
+        saida = saida + `<tr> <td> ${preco} </td> <td> ${qtde} </td> <td>${despesa} </td> <td> ${lucro} </td> </tr>`
         preco = preco - 0.50
-        quantidade = quantidade + 26
+        qtde = qtde + 26
     }
     document.getElementById("tabela").innerHTML = saida
 }
-  
