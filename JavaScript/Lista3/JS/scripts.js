@@ -23,3 +23,17 @@ function exe1(){
     document.getElementById("ordenado").innerHTML = `Ordem crescente ${a} ${b} ${c} ${d} e ordem descrescente ${d} ${c} ${b} ${a}`;
 
 }
+function exe2(){
+    let preco = 5.0
+    let quantidade = 120
+    let despesa = 200
+    let lucro // guarda o lucro da preco do circo
+    while(preco >= 1.0){
+        lucro = (preco * quantidade) - despesa
+        saida = saida + (`${preco} - ${quantidade} - ${despesa} - ${lucro} `)
+        preco = preco - 0.50
+        quantidade = quantidade + 26
+    }
+    document.getElementById("tabela").innerHTML = saida
+}
+  
