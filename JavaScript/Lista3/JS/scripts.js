@@ -37,3 +37,48 @@ function exe2(){
     }
     document.getElementById("tabela").innerHTML = saida
 }
+function exe3(){
+    let faixa1 = 0, faixa2 = 0, faixa3 = 0, faixa4 = 0 , faixa5 = 0
+    //estrutura de repetição  for 
+    // let i = 1 será executado uma uinca vez , logo no inicio
+    // i <= 8 sera execuatado toda vez , antes de entrar no loop
+    // i++ sera execuatdo toda vez , antes de ir para proxima iteração
+
+    for (let i = 1; i <=8; i++){
+        idade = Number(prompt(`informe a idade ${i}`))
+        if (idade >= 0 && idade <= 15){
+                faixa1++
+        }
+        else if (idade > 15 && idade <= 30){
+                faixa2++
+        }
+        else if (idade > 30 && idade <= 45){
+                 faixa3++
+        }
+        else if (idade > 45 && idade <= 60 ){
+                 faixa4++
+        }
+         else if (idade > 60 ){
+                 faixa5++
+}
+else {
+    alert (` Idade negativa` )
+}
+document.getElementById("resultado").innerHTML = ` 
+F1: &{faixa1} <br/>F2: &{faixa2} <br/>F3: &{faixa3} <br/>F4: &{faixa4} <br/>F5: &{faixa5} <br/>`
+`<br/> %F1: ${faixa1/8*100}% <br/> <br/> %F2: ${faixa2/8*100}% <br/> <br/> %F3: ${faixa3/8*100}% <br/>
+<br/> %F4: ${faixa4/8*100}% <br/>  <br/> %F5: ${faixa5/8*100}% <br/>`
+    
+}
+-
+}
+function exe4(){
+    //recuperar o numero fornecido pelo usuario
+    let numero = Number (Document.getElementById("numero").value)
+    let resultado = ""
+    //estrutura de repetição  para calcular a tabuada do numero
+    For (let numero = 1; numero <= 10; numero++){
+        (let i = 0; i <= 10; i++)
+        resultado += `${numero} * ${i} = ${numero * i} <br/>`
+    }
+}
