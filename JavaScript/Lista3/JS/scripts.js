@@ -176,4 +176,44 @@ function exe8(){
     }
     document.getElementById("resultado").innerHTML = `Item 1 ${idade50Peso60} Item 2 ${soma/qtdeAltura150} Item 3 ${qtdeAzuis} Item 4 ${qtdeRuivo}`
 }
-    
+function exe9(){
+    // declaração das variáveis
+    let idade, altura, peso, raca, corPelo, branco
+    let idade10Peso10 = 0, somaIdade = 0, qtdeAltura05 = 0
+  
+   
+    // entrada e processamento dos dados
+    for(let i=1; i <= 3;i++){
+        idade = Number(prompt(`Informe idade ${i}`))
+        altura = Number(prompt(`Informe altura ${i}`))
+        peso = Number(prompt(`Informe peso ${i}`))
+        raca = Number(prompt(`Informe raca ${i}`))
+        corPelo = Number(prompt(`Informe corPelo ${i}`))
+        do {
+          raca= prompt(`Informe raça`).toUpperCase()
+        }
+        while (branco != "B " ) 
+        do {
+            (raca != "V" && "L" && "P")
+        }    
+        while (idade!= "10 ")
+        // processamento
+        if (idade > 10 && peso <=10){
+            idade10Peso10++
+        }
+        if (altura >= 0.5){
+            somaIdade += idade
+            qtdeAltura05++
+        }
+        if (raca !== 'L'){
+            qtdlabrador++
+        }
+        if (corPelo == 'B'){
+            qtd++
+        }
+        if (raca !== 'L'){
+            qtdracadiferente++
+    }
+    document.getElementById("resultado").innerHTML = `Item 1 ${idade10Peso10} Item 2 ${soma/qtdeAltura150} Item 3 ${peso} Item 4 ${corPelo}`
+}
+}
