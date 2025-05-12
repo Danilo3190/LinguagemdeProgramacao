@@ -79,7 +79,94 @@ while (cliente != 0)
         
         
     }
+    function exe4(){
+    // declaração do vetor
+    let vetor = []
+    // usuário informa 15 números
+    for(let i=0;i<15;i++){
+        vetor.push(Number(prompt(`Informe o ${i+1}o. número `)))
+    }
+    // verifica os número iguais a 30 e mostrar a posição onde estão
+    let posicoes = []
+    for(let i=0;i<15;i++){
+        if (vetor[i] == 30){
+            posicoes.push(i)
+        }
+    }
+    alert(`Número 30 encontrado nas posições ${posicoes}`)
+}
+function exe5(){
+    // declaração dos vetores
+    let logica = [], linguagem = []
+    // entrada de dados
+    for(let i=0;i<15;i++){
+        logica.push(Number(prompt(`Informe o ${i+1}o. aluno que faz a disciplina Lógica`)))
+    }
+    for(let i=0;i<10;i++){
+        linguagem.push(Number(prompt(`Informe o ${i+1}o. aluno que faz a disciplina Linguagem`)))
+    }
+    // encontrar a intersecção
+    let interseccao = []
+    
+    for(let i=0;i<15;i++){ // percorre o vetor logica
+        // indexOf() percorre o vetor linguagem e procura por logica[i]
+        let posicao = linguagem.indexOf(logica[i])
+        if (posicao != -1){ // caso encontrou
+            interseccao.push(logica[i])
+        }
+    }
+    alert(`Alunos que fazem Lógica e Linguagem ${interseccao}`)
+}
+function exe6(){
+    let vendas = [], percentuais = [], nomes = []
+    for(let i=0;i<5;i++){
+        nomes.push(prompt(`Informe nome do ${i+1}o vendedor`))
+        vendas.push(Number(prompt(`Informe total vendido pelo ${i+1}o vendedor`)))
+        percentuais.push(Number(prompt(`Informe percentual de vendas do ${i+1}o vendedor`)))
+    }
+}
+ function exe7(){
+    let vetor = []
+    for (let i=0; i<5; i++){
+        vetor.push(Number(prompt(`Informe o numero ${i}°`)))
+    }
+    //conta os nagativos  e soma os positivos
+    let conta = 0
+    let soma = 0
+    for(let i=0;i<5; i++){
+        if(vetor[i] < 0){
+            conta++
+     }
+    else{
+        soma += vetor[i]
+     }
+}
+alert(`Contagem de negativos ${conta} e soma dos positivos ${soma}`)
+ }
+ function exe8(){
+    let nomes = [], medias = []
+    //entrada de dados 
+    for(let i=0; i<7; i++)
+    if(medias[i] > maior ){
+        maior = medias[i]
+    }
+    //nome do aluno com maior media
+    let posicao = medias.indexOf(maior)
+    alert(`Nome do aluno com maior media ${maior} é ${nomes[posicao]}`)
+    for(let i=0;i<7; i++){
+        if(medias[i]<7){
+            alert(`${nome[i]} precisa tirar ${10- medias[i]}`)
+        }
+      
+    }
 
+ }
+ function exe9(){
+    let nomes = [], codigos = [], preco = []
+    //entrada de dados
+    for(let i=0;i<5; i++){
+        nomes.push(prompt(`Informe o nome do ${i+1}°`))
+    }
 
-
+ }
 
