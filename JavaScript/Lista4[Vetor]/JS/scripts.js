@@ -162,11 +162,67 @@ alert(`Contagem de negativos ${conta} e soma dos positivos ${soma}`)
 
  }
  function exe9(){
-    let nomes = [], codigos = [], preco = []
+    let nomes = [], codigos = [], precos = []
+    for(let i=0;i<10;i++){
+        nomes.push(prompt(`Informe nome do produto ${i+1}`))
+        codigos.push(Number(prompt(`Informe código do produto ${i+1}`)))
+        precos.push(Number(prompt(`Informe preço do produto ${i+1}`)))
+        // let x = (int) (Math.random() * 10)
+    }
+    // gerar o relatório com os novos preços
+    for(let i=0;i<10;i++){
+        let novo
+        if (codigos[i] % 2 == 0 && precos[i] > 1000){
+            novo = precos[i] + precos[i] * 20/100
+        }
+        else if (codigos[i] % 2 == 0){
+            novo = precos[i] + precos[i] * 15/100
+        }
+        else if (precos[i] > 100){
+            novo = precos[i] + precos[i] * 10/100
+        }
+        else {
+            novo = precos[i]
+        }
+        alert(`${nomes[i]} - ${codigos[i]} - ${precos[i]} - ${novo}`)
+    }
+}
+function exe10(){
+    let vetor1 = [] , vetor2 = []
+    let vetorr1 = [] , vettorr2 = []
     //entrada de dados
-    for(let i=0;i<5; i++){
-        nomes.push(prompt(`Informe o nome do ${i+1}°`))
+    for(let i=0;i<10;i++){
+        vetor1.push(Number(prompt(`Informe o ${i+1} o elemento do vetor 1`)))
     }
 
- }
+    for(let i=0;i<5;i++){
+        vetor2.push(Number(prompt(`Informe o ${i+1} o elemento do vetor 2`)))
+    }
+    //calcular o vetor resultante 1
+    //calcular a soma dos elementos do vetor 2
+    let somaVet2 = 0
+    for(let i=o;i<5;i++){
+        somaVet2 += vetor2[i]
+    }
+    //cria o vetor resultante 1
+    for(let i=0;i<10;i++){
+        if(vetor1[i] % 2 == 0 ){
+            vetor1.push(vetor1[i] + somaVet2)
+        }
+    }
+alert(`Vetor resultante 1 ${vetor1} `)
+//calcula vetor resultante 2
+for(let i=0;i<10;i++){//para cada elemento do vetor 1
+    if(vetor1[i] % 2 == 0){//verifica se elemento é impar
+        let qtdeDivisores = 0
+        for(let j=0;j<5;j++){//para cada elemento de vetor 2
+            if(vetor1[i % vetor2[j] == 0]){//encontrou um divisor
+                qtdeDivisores++//conta +1 nos divisores
+            }
+        }
+        vettorr2.push(qtdeDivisores)//adicionar contadores no vetor2
+    }
 
+}
+alert(`Vetor resulatado 2 ${vettorr2}`) //adicinar contador no vetor2
+ }
