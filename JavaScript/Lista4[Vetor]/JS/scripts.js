@@ -118,13 +118,44 @@ function exe5(){
     alert(`Alunos que fazem Lógica e Linguagem ${interseccao}`)
 }
 function exe6(){
-    let vendas = [], percentuais = [], nomes = []
-    for(let i=0;i<5;i++){
+    let vendas = [], percentuais = [], nomes = [], comissao = []
+    // entrada de dados
+    for(let i=0;i<3;i++){
         nomes.push(prompt(`Informe nome do ${i+1}o vendedor`))
         vendas.push(Number(prompt(`Informe total vendido pelo ${i+1}o vendedor`)))
         percentuais.push(Number(prompt(`Informe percentual de vendas do ${i+1}o vendedor`)))
+        // calcula a comissão
+        comissao.push((vendas[i] * percentuais[i]) / 100)
     }
+    // relação dos vendedores e os valores a receber
+    let relatorio = ''
+    for(let i=0;i<3;i++){
+        relatorio += `\nVendedor: ${nomes[i]} vai receber ${comissao[i]}`
+    }
+    alert(relatorio)
+    // total das vendas de todos os vendedores
+    let somaVendas = 0
+    for(let i=0;i<3;i++){
+        somaVendas = somaVendas + vendas[i]
+    }
+    alert(`Total de vendas ${somaVendas.toFixed(2)}`)
+    // calcula o maior e menor valor de comissão
+    let maior = comissao[0] // primeiro é o maior
+    let menor = comissao[0] // primeiro é o menor
+    for(let i=1;i<3;i++){
+        if (comissao[i] > maior){
+            maior = comissao[i]
+        }
+        if (comissao[i] < menor){
+            menor = comissao[i]
+        }
+    }
+    let iMaior = comissao.indexOf(maior) // posição do maior na comissão
+    alert(`${nomes[iMaior]} vai receber maior comissão de ${maior}`)
+    let iMenor = comissao.indexOf(menor) // posição do menor na comissão
+    alert(`${nomes[iMenor]} vai receber menor comissão de ${menor}`)
 }
+
  function exe7(){
     let vetor = []
     for (let i=0; i<5; i++){
@@ -226,3 +257,99 @@ for(let i=0;i<10;i++){//para cada elemento do vetor 1
 }
 alert(`Vetor resulatado 2 ${vettorr2}`) //adicinar contador no vetor2
  }
+function exe11(){
+    //cadastrar codigo e qtd em estoque
+    let vetor = []
+    for(let i=0;i<3;i++){
+        //cria objeto
+        let objeto = {
+            codigo: prompt(`Informe o codigo do Produto`),
+            estoque:Number(prompt(`Informe a qtd em estoque `)),
+            preco: Number(prompt(`Informe o preço do produto`))
+        }
+        //adicionar objeto no vetor
+        vetor.push(objeto)
+    }
+    //comprando...
+    let cliente = Number(prompt(`Informe codigo do cliente`))
+    do {
+        let codigo = Number (prompt(`Informe codigo do produto para compra`))
+        let qtd = Number(prompt(`Informe a qtd do produto para compra`))
+        //procura pra ver se o produto existe
+        let produtoEncontrado
+        let i
+        for(i=0;i<3;i++){
+            if (vetor[i],codigo == codigo){//produto encontrado
+                produtoEncontrado = vetor[i]//guarda produtoe em produtoEncontrado
+                break; //para de procurar - sair do for
+            }
+            if (i == 3){//produto nao existe
+                alert(`codigo ${codigo} inexistente`);
+            }
+            else{//produto existe
+                //tem estoque suficiente
+                if (produtoEncontrado.estoque -= qtd) {
+                    //atualiza o estoque
+                    produtoEncontrado.estoque -= qtd;
+                    alert(`Pedido atendido. Obrigado e volte sempre`)
+                }
+                else{
+                    alert(`Não temos estoque suficiente desta Mercadoria`)
+                }
+            }
+            cliente = Number(prompt(`Informe codigo do novo cliente. Digite 0 para encerrar`))
+          }  //fecha o do
+          while (cliente != 0){
+            console.log(vetor);
+        }
+    
+    
+    }
+}
+
+function exe12(){
+    let vetor = []
+    // entrada de dados
+    for(let i=0;i<3;i++){
+        let objeto = {
+        nome:(prompt(`Informe nome do ${i+1}o vendedor`)),
+        vendas:(Number(prompt(`Informe total vendido pelo ${i+1}o vendedor`))),
+        percentual:(Number(prompt(`Informe percentual de vendas do ${i+1}o vendedor`)))
+        }
+       
+        // calcula a comissão // orientacao obj
+        objeto.comissao =(objeto.vendas * objeto.percentual) / 100
+        //add o obj no vetor
+        vetor.push(objeto)
+    }
+  
+    // relação dos vendedores e os valores a receber
+    let relatorio = ''
+    for(let i=0;i<3;i++){
+        relatorio += `\nVendedor: ${nomes[i].nome} vai receber ${vetor[i].comissao}`
+    }
+    alert(relatorio)
+    // total das vendas de todos os vendedores
+    let somaVendas = 0
+    for(let i=0;i<3;i++){
+        somaVendas = somaVendas + vetor[i].vendas
+    }
+    alert(`Total de vendas ${somaVendas.toFixed(2)}`)
+    // calcula o maior e menor valor de comissão
+    let objMaior = vetor[0] // primeiro é o maior
+    let objMenor = vetor[0] // primeiro é o menor
+    for(let i=1;i<3;i++){
+        if (vetor[i].comissao > Maior.comissao){
+            Maior = vetor[i]
+        }
+        if (vetor[i] < Menor.comissao){
+            Menor = vetor[i]
+        }
+    }
+   
+    alert(`${objMaior.nome} vai receber maior comissão de ${objMaior.comissao}`)
+    alert(`${objMenor.nome} vai receber menor comissão de ${objMenor.comissao}`)
+}
+
+
+
