@@ -238,8 +238,7 @@ function exe10(){
     //cria o vetor resultante 1
     for(let i=0;i<10;i++){
         if(vetor1[i] % 2 == 0 ){
-            vetor1.push(vetor1[i] + somaVet2)
-        }
+            vetorr1.push(vetor1[i] + somaVet2)
     }
 alert(`Vetor resultante 1 ${vetor1} `)
 //calcula vetor resultante 2
