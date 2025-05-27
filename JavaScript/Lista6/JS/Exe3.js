@@ -55,4 +55,4 @@ function exe3(){
     entrada(vetor)
     compra(vetor)
     saida(vetor)
-}
+ }
