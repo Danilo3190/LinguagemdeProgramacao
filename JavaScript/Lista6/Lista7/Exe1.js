@@ -1,6 +1,6 @@
 function entrada(mat){
-    for(let i=0;i<3;i++){Add commentMore actions
-        mat[i] = []
+    for(let i=0;i<3;i++){
+        mat[i] = []//cria cada linha da matriz
         for(let j=0;j<5;j++){
             mat[i][j] = parseInt(Math.random() * 10) + 15// gera número aleatório entre 0 e 9
         }
@@ -30,7 +30,7 @@ function exibeMatriz(mat){
 function Exe1(){
     let mat = []
     entrada(mat)
-    alert(`A soma dos número entre 15 e 20 é ${somaEntre15e20(mat)}`)
+    alert(`A qtde de elementos entre 15 e 20 é ${somaEntre15e20(mat)}`)
     exibeMatriz(mat)
 }
 Exe1()
