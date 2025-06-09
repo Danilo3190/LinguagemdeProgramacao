@@ -6,15 +6,25 @@ function entrada(mat){
         }
     }
 }
-function calcula(mat){
-    let soma =0
+function calculaMaiorMenor(mat){
+    let maior = mat[0][0],menor =[0][0]
+    let iMaior = 0, jMaior = 0, jMenor = 0,iMenor = 0
     for(let i=0;i<6;i++){
         for(let j=0;j<3;j++){
-            if(mat[i][j] )
-            soma++
+            if(mat[i][j] > maior ){
+            maior = mat[i][j]
+            iMaior = i
+            jMaior = i
+            }
+            if(mat[i][j]< menor){
+                menor = mat[i][j]
+                iMenor = i
+                jMenor = i
+            }
         }
     }
-    return soma
+    alert(mat)
+    alert(`${maior}esta na posicao[${iMaior}][${jMaior}e o menor ${menor}na posicao[${iMenor}][${jMenor}]`)
 }
 function exibeMatriz(mat){
     let saida = ''
@@ -31,8 +41,8 @@ function exibeMatriz(mat){
 function Exe3(){
     let mat = []
     entrada(mat)
-    calcula(mat)
+    calculaMaiorMenor(mat)
     exibeMatriz(mat)
-    alert(``)
+    alert(mat)
 
 }
