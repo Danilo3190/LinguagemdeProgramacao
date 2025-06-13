@@ -1,4 +1,4 @@
-function entrada(mat){
+function entrada(mat ,vet){
     for(let i=0;i<12;i++){
         mat[i] = []
         for(let j=0;j<4;j++){
@@ -6,30 +6,31 @@ function entrada(mat){
         }
     }
 }
-function calcularTotalMes(){
+function calcularTotalMes(mat ,vet){
     for(let i=0;i<mat.length;i++){
         let soma = 0 //vamos iniciar um novo mes
         for(let j=0;j<mat[i].length;j++){
-                soma = soma + mat[i][j]
+                soma +=  mat[i][j]
             }
             alert(`Total vendido em ${vet[i]} foi de ${soma}`)
         }
-        return soma 
+      
     }
+
 function calcularTotalSemana(mat){
         for(let j=0;j<4;j++){
         let soma = 0
         for(let i=0;i<12;i++){
-            soma = soma + mat[i][j]
+            soma +=  mat[i][j]
         }
-        alert(`Total vendido na semana ${j+1} foi de ${soma}`)
+        alert(`Total vendido na semana ${j + 1} foi de ${soma}`)
     }
 }
 function calculaTotalAno(mat){
     let soma = 0
     for(let i=0;i<mat.length;i++){
         for(let j=0;j<4;j++){
-                soma = soma + mat[i][j]
+             soma +=   mat[i][j]
             }
         }
         return soma 
@@ -39,11 +40,12 @@ function Exe5(){
     let mat = []
     const vet = ["janeiro","fevereiro","março","abril ","maio","junho","julho",
     "agosto","setembro","outubro","novembro","dezembro"]
-    casdatra(mat,vet)
+    entrada(mat ,vet)
     calcularTotalMes(mat ,vet)
     calcularTotalSemana(mat)
     calculaTotalAno(mat)
     alert(`Total vendido no ano ${calculaTotalAno(mat)}`)
+ 
 }
 Exe5()
 
