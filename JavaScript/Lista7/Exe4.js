@@ -9,14 +9,14 @@ function entrada(mat, vet){
 }
 function calcularMedia(mat,vet){
     for(let i=0;i<4;i++){
-        let soma = 0
+        let soma = 0 //aluno novo
         for(let j=0;j<5;j++){
             soma = soma + mat[i][j]
             }
         let media = soma / 5
         let situacao
         if(media < 3){
-            situacao = 'Aprovado'
+            situacao = 'Reprovado'
         }
         else if(media >=3 && media < 6){
             situacao = 'Exame'

@@ -13,3 +13,5 @@ function main(){
     processa(a)
     saida(a)
 }
+// se A fosse um vetor iria alterar o valor de  10
+// a = entrada(a) ai somaria o valor daria 20

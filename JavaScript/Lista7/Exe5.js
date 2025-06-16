@@ -35,7 +35,35 @@ function calculaTotalAno(mat){
         }
         return soma 
 
-}        
+} 
+function calculaVendasMaior5000(mat , vet){
+    for(let i=0;i<12;i++){
+        let qtde = 0
+        for(let j=0;j<4;j++){
+            if(mat[i][j]> 5000){
+                qtde++
+            }
+           
+        }
+        alert(`Em ${vet[i]} teve ${qtde}vendas maiores que R$ 5.000,00`)
+    }
+
+}       
+function calculaVendasMenor1000(mat , vet){
+    for(let i=0;i<12;i++){
+        let qtde = 0
+        for(let j=0;j<4;j++){
+            if(mat[i][j] < 1000){
+                qtde++
+            }
+           
+        }
+        if(qtde > 0){
+            alert(`Em ${vet[i]} teve ${qtde}vendas menores que R$ 1.000,00`)
+        }
+        
+    }
+}
 function Exe5(){
     let mat = []
     const vet = ["janeiro","fevereiro","março","abril ","maio","junho","julho",
@@ -45,10 +73,9 @@ function Exe5(){
     calcularTotalSemana(mat)
     calculaTotalAno(mat)
     alert(`Total vendido no ano ${calculaTotalAno(mat)}`)
+    calculaVendasMaior5000(mat,vet)
+    calculaVendasMenor1000(mat , vet)
  
 }
 Exe5()
 
-//crie uma função que calcula e mostra a qtde de vendas maiores que 5000 em cada mes
-
-//crie uma função que calcula e mostra os meses que tiveram vendas menores que 1000

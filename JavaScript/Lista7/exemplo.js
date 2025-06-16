@@ -26,3 +26,15 @@ function exemplo(){
 
 }
 exemplo()
+function verificarParOuImpar(numero) {
+    if (numero % 2 === 0) {
+        return "Par";
+    } else {
+        return "Ímpar";
+    }
+}
+
+// Exemplo de uso
+let numero = Number(prompt("Digite um número:"));
+alert(`O número ${numero} é ${verificarParOuImpar(numero)}.`);
+

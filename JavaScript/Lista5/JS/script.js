@@ -88,14 +88,14 @@ function exe6(){
     alert(`${objMenor.nome} vai receber menor comissão de ${objMenor.comissao}`)
 }
 
-function exe9(){
+function exe9(){//gera relatorio com acrescimo
     let vetor = []
     for(let i=0;i<10;i++){
         let obj = {
             nome : prompt(`Informe nome do produto ${i+1}`),
             codigo : Number(prompt(`Informe código do produto ${i+1}`)),
             preco : Number(prompt(`Informe preço do produto ${i+1}`)),
-            novo: 0
+            novo: 0//inicio com zero porque vou calcular ele la embaixo novo preço
         }
         vetor.push(obj)
     }
