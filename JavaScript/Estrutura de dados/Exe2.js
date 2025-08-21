@@ -15,11 +15,7 @@ function bubbleSort(vetor) {
 }
 //
 //programa principal
-vet = []
-for (let i = 0;i <vetor.length; i++){
-    vet[i] = [25, 57, 48, 37, 12, 92, 86, 33]
-}
-
+vet = [25, 57, 48, 37, 12, 92, 86, 33]
 // Executa a ordenação
 console.log(vet)
 bubbleSort(vetor)
