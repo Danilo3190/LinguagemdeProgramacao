@@ -21,3 +21,4 @@ console.log(vet)
 bubbleSort(vetor)
 console.log("Vetor ordenado:", vetor);
 console.log("Total de trocas realizadas:", trocas);
+

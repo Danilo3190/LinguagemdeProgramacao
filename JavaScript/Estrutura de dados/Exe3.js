@@ -35,7 +35,58 @@ function bubbleSort(vetor) {
   }
   return vetor;
 }
+//-----------------------------------------------------------------------------------------------------------
+
+function selecaoDireta(vetor) {
+  let aux = vetor.length;
+
+  for (let i = 0; i < aux - 1; i++) {
+    let menor = i;
+    console.log(vetor)
+    for (let j = i + 1; j <aux; j++) {
+      if (vetor[j] < vetor[menor]) {
+        menor = j;
+      }
+    }
+
+    // Troca os elementos
+    if (menor !== i) {
+      let temp = vetor[i];
+      vetor[i] = vetor[menor];
+      vetor[menor] = temp;
+    }
+  }
+}
+
+// Sua lista original
 let numeros = [25, 57, 48, 37, 12, 92, 86, 33];
-let ordenado = bubbleSort(numeros);
-console.log("Vetor ordenado:", ordenado);
+let ordenados = selecaoDireta(numeros);
+
+console.log("Lista ordenada:", ordenados);
+
+
+//-------------------------------------------------------------------------------------------------
+function insercaoDireta(vetor) {
+  for (var i = 1; i < vetor.length; i++) {
+   
+    var chave = vetor[i];
+    var j = i - 1;
+
+    while (j >= 0 && vetor[j] > chave) {
+      vetor[j + 1] = vetor[j];
+      j--;
+    }
+
+    vetor[j + 1] = chave;
+    console.log(vetor)
+  }
+
+
+}
+
+numeros = [25, 57, 48, 37, 12, 92, 86, 33];
+ordenados = insercaoDireta(numeros);
+//console.log("Lista ordenada:", ordenados);
+
+
 
