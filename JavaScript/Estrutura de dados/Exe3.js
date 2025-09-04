@@ -90,28 +90,24 @@ ordenados = insercaoDireta(numeros);
 
 //-----------------------------------------------------------------------------------------------------------------------
 
-// Gerar vetor aleatório
 function gerarAleatorio(tam, vetor) {
   for (var i = 0; i < tam; i++) {
     vetor.push(Math.floor(Math.random() * tam));
   }
 }
 
-// Gerar vetor ordenado
 function gerarOrdenado(tam, vetor) {
   for (var i = 0; i < tam; i++) {
     vetor.push(i);
   }
 }
 
-// Gerar vetor invertido
 function gerarInvertido(tam, vetor) {
   for (var i = 0; i < tam; i++) {
     vetor.push(tam - i);
   }
 }
 
-// Bubble Sort (modifica vetor diretamente)
 function bubbleSort(vetor) {
   for (var i = 0; i < vetor.length - 1; i++) {
     for (var j = 0; j < vetor.length - i - 1; j++) {
@@ -124,7 +120,6 @@ function bubbleSort(vetor) {
   }
 }
 
-// Seleção Direta (modifica vetor diretamente)
 function selecaoDireta(vetor) {
   for (var i = 0; i < vetor.length - 1; i++) {
     var menor = i;
@@ -139,7 +134,6 @@ function selecaoDireta(vetor) {
   }
 }
 
-// Inserção Direta (modifica vetor diretamente)
 function insercaoDireta(vetor) {
   for (var i = 1; i < vetor.length; i++) {
     var chave = vetor[i];
@@ -152,7 +146,6 @@ function insercaoDireta(vetor) {
   }
 }
 
-// Medir tempo de execução
 function medirTempo(nomeAlgoritmo, tipoVetor, vetor, algoritmo) {
   var inicio = performance.now();
   algoritmo(vetor); // vetor é modificado diretamente
