@@ -1,4 +1,6 @@
+/*
 function fatorial(numero){
+
   if (numero == 0) {
     return 1
   }
@@ -44,26 +46,78 @@ console.log(result)
 
 //---------------------------------------------------
 
-function binario(vetor,valorBusca,inicio = 0 , final  = vetor.lenght -1){
-  var meio
-  if (inicio > final)
-    return -1
+function buscaBinaria(vetor, valorBusca, inicio = 0, final = vetor.length - 1) {
+  if (inicio > final) return -1;
+
+ var meio = Math.floor((inicio + final) / 2);
+
+  if (vetor[meio] === valorBusca) {
+    return meio;
+  } else if (valorBusca < vetor[meio]) {
+    return buscaBinaria(vetor, valorBusca, inicio, meio - 1);
+  } else {
+    return buscaBinaria(vetor, valorBusca, meio + 1, final);
+  }
 }
-else{
-  meio = Math.floor((inicio + final ) / 2)
-  if(vetor [meio] == vetor.length -1)
-  return meio
 
-else if (vetor.length -1 < vetor[meio])
-  return busca ( vetor,inicio,meio -1,vetor.length-1)
-  else 
-    return valorBusca(vetor, meio+1,final,vetor.length-1)
+var vetor = [0, 11, 22, 33, 44, 55, 66, 77, 88];
+var valor = 44;
+var resultado = buscaBinaria(vetor, valor);
 
+console.log("Índice do valor:", resultado); // Saída esperada: 4
+
+///--------------------------------------------------
+function torreDeHanoi(numero, origem, destino, auxiliar) {
+  if (numero == 1) {
+    console.log(`Mova o disco 1 de ${origem} para ${destino}`);
+    return;
+  }
+
+  torreDeHanoi(numero - 1, origem, auxiliar, destino);
+  console.log(`Mova o disco ${n} de ${origem} para ${destino}`);
+  torreDeHanoi(numero - 1, auxiliar, destino, origem);
 }
-//-------------------
-  var numero = 0 [0, 11,22,33,44,55,66,77,88]
-  result = binario(numero, 0, vetor.length -1, 44)
-  console.log("numero = ", numero)
-  console.log(result)
-  
 
+// 3 discos
+torreDeHanoi(3, 'A', 'C', 'B');
+*/
+//-----------------------------------------
+function Quicksort(array, left, right) {
+  var i = left;
+  var j = right;
+  var aux;
+  var pivotidx = Math.floor((left + right) / 2);
+  var pivot = parseInt(array[pivotidx]);
+
+  // partição
+  while (i <= j) {
+    while (parseInt(array[i]) < pivot) {
+      i++;
+    }
+    while (parseInt(array[j]) > pivot) {
+      j--;
+    }
+    if (i <= j) {
+      aux = array[i];
+      array[i] = array[j];
+      array[j] = aux;
+      i++;
+      j--;
+    }
+  }
+
+  // recursão
+  if (left < j) {
+    Quicksort(array, left, j);
+  }
+  if (i < right) {
+    Quicksort(array, i, right);
+  }
+
+  return array;
+}
+
+// programa
+let vet = [77, 44, 22, 33, 99, 55, 88, 0, 66, 11];
+Quicksort(vet, 0, vet.length - 1);
+console.log(vet);
