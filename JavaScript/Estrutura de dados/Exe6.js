@@ -170,8 +170,3 @@ let frase = "exercicio muito complicado";
 inverterPalavrasComPilha(frase);
 /*
 
-
-
-
-
-

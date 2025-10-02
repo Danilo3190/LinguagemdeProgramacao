@@ -228,7 +228,7 @@ function executarTestes() {
   };
 
   for (const nomeAlgoritmo in algoritmos) {
-    console.group(`🔍 ${nomeAlgoritmo}`);
+    console.group(` ${nomeAlgoritmo}`);
     for (const TAM of tamanhos) {
       const vetorAleatorio = [];
       const vetorOrdenado = [];
