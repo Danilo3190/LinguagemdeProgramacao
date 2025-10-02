@@ -82,25 +82,25 @@ function torreDeHanoi(numero, origem, destino, auxiliar) {
 torreDeHanoi(3, 'A', 'C', 'B');
 */
 //-----------------------------------------
-function Quicksort(array, left, right) {
+function Quicksort(vetor, left, right) {
   var i = left;
   var j = right;
   var aux;
   var pivotidx = Math.floor((left + right) / 2);
-  var pivot = parseInt(array[pivotidx]);
+  var pivot = parseInt(vetor[pivotidx]);
 
   // partição
   while (i <= j) {
-    while (parseInt(array[i]) < pivot) {
+    while (parseInt(vetor[i]) < pivot) {
       i++;
     }
-    while (parseInt(array[j]) > pivot) {
+    while (parseInt(vetor[j]) > pivot) {
       j--;
     }
     if (i <= j) {
-      aux = array[i];
-      array[i] = array[j];
-      array[j] = aux;
+      aux = vetor[i];
+      vetor[i] = vetor[j];
+      vetor[j] = aux;
       i++;
       j--;
     }
@@ -108,13 +108,13 @@ function Quicksort(array, left, right) {
 
   // recursão
   if (left < j) {
-    Quicksort(array, left, j);
+    Quicksort(vetor, left, j);
   }
   if (i < right) {
-    Quicksort(array, i, right);
+    Quicksort(vetor, i, right);
   }
 
-  return array;
+  return vetor;
 }
 
 // programa

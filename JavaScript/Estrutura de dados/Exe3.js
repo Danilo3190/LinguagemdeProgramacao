@@ -156,7 +156,7 @@ function medirTempo(nomeAlgoritmo, tipoVetor, vetor, algoritmo) {
 
 // Função principal
 function executarTestes() {
-  var TAM = 1000;
+  var TAM = [100,1000,10000,100000]
 
   var vetorAleatorio = []
   var vetorOrdenado = []
@@ -169,7 +169,8 @@ function executarTestes() {
   var algoritmos = {
     "Bubble Sort": bubbleSort,
     "Seleção Direta": selecaoDireta,
-    "Inserção Direta": insercaoDireta
+    "Inserção Direta": insercaoDireta,
+    
   }
 
   var tipos = {
