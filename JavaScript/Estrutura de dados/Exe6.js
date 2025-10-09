@@ -124,12 +124,12 @@ function inverterPalavrasComPilha(texto) {
 }
 
 //  Teste do programa
-let frase = "exercicio muito complicado";
-inverterPalavrasComPilha(frase);
+let frase1 = "exercicio muito complicado";
+inverterPalavrasComPilha(frase1);
 
 
 //-------------------------------------------------------------
-/*
+
 function inverterPalavrasComPilha(texto) {
   let resultado = "";   
   let palavra = "";   
@@ -166,7 +166,45 @@ function inverterPalavrasComPilha(texto) {
 
 
 
-let frase = "exercicio muito complicado";
-inverterPalavrasComPilha(frase);
-/*
+let frase2 = "exercicio muito complicado";
+inverterPalavrasComPilha(frase2);
+
+
+//-----------------------------
+function intercalar(vetor1,vetor2){
+  var vetor3 = []
+  while(vetor1.length != 0){
+    vetor3.push(vetor1.shift())
+    vetor3.push(vetor2.shift())
+
+  }
+  console.log(vetor3)
+}
+var vetor1 = [1,3,5,7]
+var vetor2 = [2,4,6,8]
+
+intercalar(vetor1,vetor2)
+
+//--------------------------
+
+  var frase = "abc xyz"
+  var pilha = []
+  var letra, i = 0
+  var  fraseinvertida = " "
+
+  while(i < frase.length){
+    while(frase[i] != " " && i < frase.length){
+      pilha.push(frase[i])
+      i++
+
+    }
+    while(pilha.length != 0){
+      letra = pilha.pop()
+      fraseinvertida += letra
+    }
+      fraseinvertida += " "
+    i++
+  }
+    console.log(fraseinvertida)
+    
 
