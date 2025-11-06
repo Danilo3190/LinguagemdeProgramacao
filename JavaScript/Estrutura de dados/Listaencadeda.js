@@ -184,7 +184,7 @@ function LinkedList() {
 
   // Remove o elemento de uma posição específica
   this.removeAt = function(index) {
-    if (index < 0 || index >= length) return null;
+    if (index -1 && index < length);
 
     let current = head;
     if (index === 0) {
@@ -203,6 +203,7 @@ function LinkedList() {
     length--;
     return current.elemento;
   };
+  return null
 }
 let lista = new LinkedList();
 
@@ -232,6 +233,149 @@ console.log('Índice do elemento 12:', lista.indexOf(12)); // 1
 
 lista.removeAt(2);
 console.log('Após remover na posição 2:', lista.toString()); // 10 -> 12 -> 5
+
+
+//-----------------------------------------------------------------------------
+//feito pela Jaqueline
+function LinkedList(){
+
+  let Node = function(element){
+      this.element = element
+      this.next = null
+  };
+
+  let length = 0;
+  let head = null;
+
+  this.append = function(element){     
+      let node = new Node(element), current    
+      if(head === null){
+          head = node
+      }else{  
+          current = head
+          while(current.next){ 
+              current = current.next
+          }
+          current.next = node
+      }
+      length++
+  };
+
+  this.size = function(){
+      return length
+  };
+
+  this.size2 = function(){
+      var cont = 0
+      var current = head
+
+      while(current){
+          current = current.next
+          cont++
+      }
+      return cont
+  };
+
+  this.toString = function(){
+      let current = head, string = ''
+      while(current){
+          string += current.element + (current.next ? ' -> ' : '')
+          current = current.next
+      }
+      return string
+  };
+
+  this.empty = function(){
+      return length == 0;
+  };
+
+  this.removePrimeiro = function(){
+      let current = head;
+
+      if(this.length == 0){
+          return -1
+      }else{
+          head = current.next
+          length--
+          return current.element
+      }
+  };
+
+  this.insereInicio = function(element){
+      let node = new Node(element)
+      node.next = head
+      head = node
+      length++
+  };
+
+  this.Index = function(element){
+      let current = head
+      let index = 0
+      while(current){
+          if(element == current.element){
+              return index
+          }
+          index++
+          current = current.next
+      }
+      return -1
+  };
+
+  this.removeAt = function(position){
+      //verifica valores fora do intervalo
+      if(position > -1 && position < length){
+          let current = head,
+          previous,
+          index = 0;
+          //Remove Primeiro Elemento
+          if (position == 0){
+              head = current.next;
+          }else{
+              while (index ++ < position){
+                  previous = current;
+                  current = current.next;
+              }
+              //Faz a Ligação de previous com o next de current: pula esse elemento para removê-lo
+              previous.next = current.next;
+          }
+          length --;
+          return current.element;
+      }else{
+          return null;
+      }
+  };
+
+}
+
+
+//Programa Principal
+lista = new LinkedList()
+lista.append(10)
+lista.append(12)
+lista.append(5)
+
+console.log(lista.size())
+console.log('Lista: ', lista.toString())
+console.log('--------')
+
+console.log('Elemento removido', lista.removePrimeiro())
+
+console.log(lista.size())
+console.log('Lista: ', lista.toString())
+console.log('--------')
+
+lista.insereInicio(6)
+console.log(lista.size())
+console.log('Lista: ', lista.toString())
+console.log('--------')
+
+console.log('índice = ', lista.Index(5))
+console.log('--------')
+
+console.log('Ekemento removido = ', lista.removeAt(7))
+console.log(lista.size())
+console.log('Lista: ', lista.toString())
+
 
 
 
